@@ -14,9 +14,8 @@ from pathlib import Path
 
 
 # Load model file
-filename = Path('LogRDummyModel.pkl')
-model = pickle.load(open(filename, 'rb'))
-
+with open('LogRDummyModel.pkl', 'rb') as f:
+    model = pickle.load(f)
 
 # In[6]:
 
