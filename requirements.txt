@@ -3,4 +3,3 @@ pickle-mixin
 pickleshare 
 pathlib
 scikit-learn
-streamlib
