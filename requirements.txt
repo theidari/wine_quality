@@ -1,4 +1,4 @@
-pandas 1.4.2
-pickle-mixin 1.0.2
-pickleshare 0.7.5
+pandas 
+pickle-mixin 
+pickleshare 
 pathlib
