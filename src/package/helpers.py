@@ -113,5 +113,54 @@ def skewness_report(df):
     result_df = pd.DataFrame({'c_name': df_features.columns, 'skewness': skew_values, 'category': skew_categories})
     return result_df
 
+# plotting function __________________________________________________________________________________________________________________________ 
+def violin_plot(df):
+    fig = make_subplots(rows=1, cols=len(df.columns), horizontal_spacing=0.02)
+    colors = np.linspace(COLORSET[0], COLORSET[1], len(df.columns)).tolist()
+    for i, column in enumerate(df.columns):
+        rgb_tuple = tuple(colors[i])
+        rgb_string = 'rgb({}, {}, {})'.format(*rgb_tuple)
+        if len(column.split()) >= 3:
+            first_line = column.split()[0].upper()
+            second_line = column.split()[1].upper()+" "+column.split()[2].upper()
+            name = f"{first_line}<br>{second_line}"
+        else:
+            name = column.upper()
+        fig.add_trace(
+            go.Violin(
+                y=df[column],
+                name=name,
+                box_visible=True,
+                meanline_visible=True,
+                fillcolor=rgb_string,
+                opacity=0.7,
+                line=dict(color='black', width=1),
+                marker=dict(color='black', size=5, opacity=0.3),
+                showlegend=False
+            ),
+            row=1,
+            col=i+1
+        )
+        
+    fig.update_layout(
+        height=700,
+        width=1500, 
+        xaxis=dict(color= 'black',
+                   showline=True,
+                   linewidth=1,
+                   linecolor='black'), 
+        yaxis=dict(title=dict(text='Counts', font=dict(size= 14, color= 'black', family= "calibri"))),
+        plot_bgcolor='#f7f7f7',
+        paper_bgcolor="#ffffff"
+    )
+    for i, column in enumerate(df.columns):
+        fig.update_xaxes(tickcolor='#ffffff',
+                tickfont=dict(size= 14, family='calibri', color='black' ),
+                                         showline=True, linewidth=3, linecolor='#f7f7f7', mirror=True)
+        fig.update_yaxes(tickangle=-90, tickfont=dict(size= 14, family='calibri', color='black'), 
+                                                      showline=True, linewidth=3, linecolor='#f7f7f7', mirror=True)
+
+    fig.show()
+
 print(f"☑ helpers is imporetd")    
 # --------------------------------------------------------------------------------------------------------------------------------------------

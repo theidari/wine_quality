@@ -4,15 +4,14 @@
 
 
 # folders and files names
-WHITE_WINE = "https://archive.ics.uci.edu/ml/machine-learning-databases/wine-quality/winequality-white.csv"
-RED_WINE   = "https://archive.ics.uci.edu/ml/machine-learning-databases/wine-quality/winequality-red.csv"
-DATA_URL   = "../data/"
-OUTPUT_URL = "../results/"
+WHITE_WINE     = "https://archive.ics.uci.edu/ml/machine-learning-databases/wine-quality/winequality-white.csv"
+RED_WINE       = "https://archive.ics.uci.edu/ml/machine-learning-databases/wine-quality/winequality-red.csv"
+DATA_URL       = "../data/"
+SPLIT_DATA_URL = "../data/splitdata/"
+OUTPUT_URL     = "../results/"
 
 # colors
-SEVENSET   =["#ffd700","#ffb14e","#fa8775","#ea5f94","#cd34b5","#9d02d7","#0000ff"]
-FOURSET=1
-FIVESET=2
+COLORSET       = [[255, 0, 0],[0, 0, 255]]
 
 # separation
 H_LINE     ="\n--------------------------------------------------------------------------------\n"
