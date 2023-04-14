@@ -20,7 +20,7 @@ with open('LogRDummyModel.pkl', 'rb') as f:
 # In[6]:
 
 
-# cache for speed/easy access REMEMBER TO UNCACHE
+# cache for speed/easy access REMEMBER TO UNCACHEE
 # @st.cache
 
 
