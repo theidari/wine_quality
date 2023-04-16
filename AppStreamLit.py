@@ -39,7 +39,7 @@ def predict(user_input):
         model = model_red 
     
     # Convert input to a dataframe to pass to .predict method
-    input = pd.DataFrame([user_input_scaled],\
+    input = pd.DataFrame(user_input_scaled,\
                          columns=['Fixed Acidity','Volatile Acidity','Citric Acid','Residual Sugar','Chlorides','Free Sulfur Dioxide', 'Total Sulfur Dioxide',\
                                   'Density', 'pH Level', 'Sulphates Content', 'Alcohol Content']) # str(num) for num in num_list?
     prediction = model.predict(input)
