@@ -115,17 +115,37 @@ def skewness_report(df):
 
 # plotting function __________________________________________________________________________________________________________________________ 
 def violin_plot(df):
+    """
+    Create a violin plot for a DataFrame
+
+    Args:
+        df: A pandas DataFrames that will be analyzed.
+        
+    Returns:
+        A plot includes a statistical summary of the features.
+    """
+    # ceate subplots with one row and number of columns equal to the number of columns in the df
     fig = make_subplots(rows=1, cols=len(df.columns), horizontal_spacing=0.02)
+    
+    # define a color gradient for the violins based on color data in (./src/package/)
     colors = np.linspace(COLORSET[0], COLORSET[1], len(df.columns)).tolist()
+    
+    # iterate through each column in the df and add a violin trace to the plot
     for i, column in enumerate(df.columns):
+        
+        # define the color for the violin based on the color gradient
         rgb_tuple = tuple(colors[i])
         rgb_string = 'rgb({}, {}, {})'.format(*rgb_tuple)
+        
+        # if the column name contains more than two words, split the name into two lines for better readability
         if len(column.split()) >= 3:
             first_line = column.split()[0].upper()
             second_line = column.split()[1].upper()+" "+column.split()[2].upper()
             name = f"{first_line}<br>{second_line}"
         else:
             name = column.upper()
+            
+        # add a violin trace to the plot
         fig.add_trace(
             go.Violin(
                 y=df[column],
@@ -141,7 +161,8 @@ def violin_plot(df):
             row=1,
             col=i+1
         )
-        
+    
+    # update the layout of the plot
     fig.update_layout(
         height=700,
         width=1500, 
@@ -153,6 +174,8 @@ def violin_plot(df):
         plot_bgcolor='#f7f7f7',
         paper_bgcolor="#ffffff"
     )
+    
+    # update the x and y axes for each column
     for i, column in enumerate(df.columns):
         fig.update_xaxes(tickcolor='#ffffff',
                 tickfont=dict(size= 14, family='calibri', color='black' ),
@@ -160,7 +183,7 @@ def violin_plot(df):
         fig.update_yaxes(tickangle=-90, tickfont=dict(size= 14, family='calibri', color='black'), 
                                                       showline=True, linewidth=3, linecolor='#f7f7f7', mirror=True)
 
-    fig.show()
+    return fig.show() # show the plot
 
 print(f"☑ helpers is imporetd")    
 # --------------------------------------------------------------------------------------------------------------------------------------------
