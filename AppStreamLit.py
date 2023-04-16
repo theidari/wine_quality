@@ -61,7 +61,7 @@ feature7 = st.number_input('Total Sulfur Dioxide', min_value = 1.8, max_value = 
 feature8 = st.number_input('Density', min_value = 0.996, max_value = 1.001, value=0.997)
 feature9 = st.number_input('pH Level', min_value = 2.72, max_value = 3.9, value=3.2)
 feature10 = st.number_input('Sulphates Content', min_value = 0.6, max_value = 1.07, value=0.8)
-feature11 = st.number_input('Alcohol Content', min_value = 8.0, max_value = 14.9, value=10)
+feature11 = st.number_input('Alcohol Content', min_value = 8.0, max_value = 14.9, value=10.0)
 
 colour = st.selectbox('Red or White:', ['Red','White'])
 
