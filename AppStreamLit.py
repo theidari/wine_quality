@@ -51,13 +51,13 @@ st.header('Enter wine chemistry below')
 
 # User feature input
 # Add units to these, maybe description or like Citric Acid content?
-feature1 = st.number_input('Fixed Acidity', min_value = 1.5, max_value = 2.5, value=2)
+feature1 = st.number_input('Fixed Acidity', min_value = 1.5, max_value = 2.5, value=2.0)
 feature2 = st.number_input('Volatile Acidity', min_value = 0.35, max_value = 1.15, value=0.5)
-feature3 = st.number_input('Citric Acid', min_value = 0.0, max_value = 0.95, value=0)
+feature3 = st.number_input('Citric Acid', min_value = 0.0, max_value = 0.95, value=0.0)
 feature4 = st.number_input('Residual Sugar', min_value = 0.8, max_value = 3.0, value=1.0)
 feature5 = st.number_input('Chlorides', min_value = 0.2, max_value = 0.53, value=0.3)
 feature6 = st.number_input('Free Sulfur Dioxide', min_value = 1.44, max_value = 4.8, value=2.5)
-feature7 = st.number_input('Total Sulfur Dioxide', min_value = 1.8, max_value = 259, value=5) # This one huge different b/w white and red, trying min/max of each
+feature7 = st.number_input('Total Sulfur Dioxide', min_value = 1.8, max_value = 259.0, value=5.0) # This one huge different b/w white and red, trying min/max of each
 feature8 = st.number_input('Density', min_value = 0.996, max_value = 1.001, value=0.997)
 feature9 = st.number_input('pH Level', min_value = 2.72, max_value = 3.9, value=3.2)
 feature10 = st.number_input('Sulphates Content', min_value = 0.6, max_value = 1.07, value=0.8)
