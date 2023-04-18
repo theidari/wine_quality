@@ -18,7 +18,7 @@ df_red = pd.read_csv('Resources/red_train_norm.csv', sep = ',')
 
 X_white = df_white.drop(columns = ['quality', 'total sulfur dioxide',
                                      'density', 'citric acid', 'residual sugar'])
-X_red = df_red.drop(columns=['quality', 'fixed acidity', 'total sulfur dioxide', 'total sulfur dioxide',
+X_red = df_red.drop(columns=['quality', 'fixed acidity', 'free sulfur dioxide', 'total sulfur dioxide',
                                      'density'])
 
 scaler_white = StandardScaler()
