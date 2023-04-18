@@ -43,8 +43,8 @@ def predict(user_input):
     
     # Convert input to a dataframe to pass to .predict method
     input = pd.DataFrame(user_input_scaled,\
-                         columns=['fixed acidity','volatile Acidity','chlorides','free sulfur dioxide', \
-                                   'pH', 'sulphates', 'alcohol content']) # str(num) for num in num_list?
+                         columns=['fixed acidity','volatile acidity','chlorides','free sulfur dioxide', \
+                                   'pH', 'sulphates', 'alcohol']) # str(num) for num in num_list?
     # ['Fixed Acidity','Volatile Acidity','Citric Acid','Residual Sugar','Chlorides','Free Sulfur Dioxide', 'Total Sulfur Dioxide', 'Density', 'pH Level', 'Sulphates Content', 'Alcohol Content']
     prediction = model.predict(input)
     return prediction
