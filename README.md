@@ -36,3 +36,6 @@ Following programming languages, software, and libraries were used in this proje
 
 <h3>Wine Quality Predictor</h3>
 <p align="justify">A tool designed to predict wine quality, based on a set of input features. The predictor employs statistical models or machine learning algorithms to learn from a dataset of labeled examples and to make predictions for new, unseen samples. The features used can vary depending on the type of wine and the available data, but may include attributes such as acidity, pH, alcohol content, sugar content, or sensory descriptors. The accuracy and reliability of the predictor depend on the quality and representativeness of the dataset, the choice of modeling method, and the validation procedures used to evaluate its performance. Wine quality predictors can be useful for wine makers, sellers, and consumers, as they can provide valuable information about the expected taste, aroma, and overall appeal of a wine, and help to optimize production or selection decision</p>
+
+<h4>Contribution</h4>
+<p align="justify">We welcome pull requests! However, if you are planning to make significant changes, please initiate a discussion by opening an issue to share your ideas and contributions.</p>
