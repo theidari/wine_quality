@@ -1,7 +1,7 @@
 import streamlit as st
 import pandas as pd
 import pickle
-from sklearn.preprocessing import StandardScaler
+# from sklearn.preprocessing import StandardScaler
 from sklearn.model_selection import train_test_split
 # from pathlib import Path
 
@@ -12,27 +12,11 @@ model_white = pickle.load(open('Resources/svm_model_white.pkl', 'rb'))
 # Load model file for red
 model_red = pickle.load(open('Resources/svm_model_red.pkl', 'rb'))
 
-# Load and scale datasets, in order to scale new data coming in
-df_white = pd.read_csv('Resources/white_train_norm.csv', sep = ',')
-df_red = pd.read_csv('Resources/red_train_norm.csv', sep = ',')
-
-X_white = df_white.drop(columns = ['quality', 'total sulfur dioxide',
-                                     'density', 'citric acid', 'residual sugar'])
-X_red = df_red.drop(columns=['quality', 'fixed acidity', 'free sulfur dioxide', 'total sulfur dioxide',
-                                     'density'])
-
-scaler_white = StandardScaler()
-scaler_red = StandardScaler()
-
-# Don't need to record the scaled data? Just prepare the scaler 
-# or use .transform instead of .fit?
-scaler_white.fit(X_white)
-scaler_red.fit(X_red)
 
 # Streamlit elements 
 st.title('Wine Quality Prediction')
 # st.image('https://images.unsplash.com/photo-1585553616435-2dc0a54e271d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8d2luZXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=400&q=60')
-st.header('Trained with wine data from Vinho Verde - Portugal')
+st.write('Trained with wine data from Vinho Verde - Portugal')
 st.header('Enter wine chemistry below')
 
 tab1, tab2 = st.tabs(['White Wine', 'Red Wine'])
@@ -56,7 +40,7 @@ with tab1:
         # Collect user input
         user_input = [feature1, feature2, feature5, feature6, feature9, feature10, feature11]
         # Scale user input to pass to model, choosing appropriate model from wine colour
-        user_input_scaled = scaler_white.transform([user_input])
+        # user_input_scaled = scaler_white.transform([user_input])
         model = model_white 
         # st.write(user_input_scaled)
         input = pd.DataFrame(user_input_scaled,\
@@ -92,7 +76,7 @@ with tab2:
         # Collect user input
         user_input = [feature2, feature3, feature4, feature5, feature9, feature10, feature11]
         # Scale user input to pass to model, choosing appropriate model from wine colour
-        user_input_scaled = scaler_red.transform([user_input])
+        # user_input_scaled = scaler_red.transform([user_input])
         model = model_red
 
         input = pd.DataFrame(user_input_scaled,\
@@ -142,3 +126,22 @@ with tab2:
 #     # ['Fixed Acidity','Volatile Acidity','Citric Acid','Residual Sugar','Chlorides','Free Sulfur Dioxide', 'Total Sulfur Dioxide', 'Density', 'pH Level', 'Sulphates Content', 'Alcohol Content']
 #     prediction = model.predict(input)
 #     return prediction
+
+
+
+# # Load and scale datasets, in order to scale new data coming in
+# df_white = pd.read_csv('Resources/white_train_norm.csv', sep = ',')
+# df_red = pd.read_csv('Resources/red_train_norm.csv', sep = ',')
+
+# X_white = df_white.drop(columns = ['quality', 'total sulfur dioxide',
+#                                      'density', 'citric acid', 'residual sugar'])
+# X_red = df_red.drop(columns=['quality', 'fixed acidity', 'free sulfur dioxide', 'total sulfur dioxide',
+#                                      'density'])
+
+# scaler_white = StandardScaler()
+# scaler_red = StandardScaler()
+
+# # Don't need to record the scaled data? Just prepare the scaler 
+# # or use .transform instead of .fit?
+# scaler_white.fit(X_white)
+# scaler_red.fit(X_red)
