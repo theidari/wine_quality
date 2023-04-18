@@ -76,7 +76,7 @@ with tab1:
         # Scale user input to pass to model, choosing appropriate model from wine colour
         user_input_scaled = scaler_white.transform([user_input])
         model = model_white 
-        st.write(user_input_scaled)
+        # st.write(user_input_scaled)
         
         quality = predict(user_input)
         if quality == 0:
@@ -84,7 +84,7 @@ with tab1:
         if quality == 1:
             quality = 'Delicious!'
         # quality = predict(feature1, feature2, feature3) # this will just be good/bad/declious?
-        st.success(f'The predicted wine quality is {quality}', key = 'white success') # or we predict your wine to be [...]?
+        st.success(f'The predicted wine quality is {quality}') # or we predict your wine to be [...]?
 
 with tab2: 
     # User feature input
@@ -114,7 +114,7 @@ with tab2:
         if quality == 1:
             quality = 'Delicious!'
         # quality = predict(feature1, feature2, feature3) # this will just be good/bad/declious?
-        st.success(f'The predicted wine quality is {quality}', key = 'red success') # or we predict your wine to be [...]?
+        st.success(f'The predicted wine quality is {quality}') # or we predict your wine to be [...]?
 
 # colour = st.selectbox('Red or White:', ['Red','White'])
 
