@@ -43,7 +43,7 @@ with tab1:
         # user_input_scaled = scaler_white.transform([user_input])
         model = model_white 
         # st.write(user_input_scaled)
-        input = pd.DataFrame(user_input,\
+        input = pd.DataFrame([user_input],\
                          columns=['fixed acidity','volatile acidity','chlorides','free sulfur dioxide', \
                                    'pH', 'sulphates', 'alcohol']) # str(num) for num in num_list?
         # ['Fixed Acidity','Volatile Acidity','Citric Acid','Residual Sugar','Chlorides','Free Sulfur Dioxide', 'Total Sulfur Dioxide', 'Density', 'pH Level', 'Sulphates Content', 'Alcohol Content']
@@ -79,7 +79,7 @@ with tab2:
         # user_input_scaled = scaler_red.transform([user_input])
         model = model_red
 
-        input = pd.DataFrame(user_input,\
+        input = pd.DataFrame([user_input],\
                          columns=['volatile acidity','citric acid', 'residual sugar','chlorides', \
                                    'pH', 'sulphates', 'alcohol'])
         
