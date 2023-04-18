@@ -77,8 +77,13 @@ with tab1:
         user_input_scaled = scaler_white.transform([user_input])
         model = model_white 
         # st.write(user_input_scaled)
-        
-        quality = predict(user_input)
+        input = pd.DataFrame(user_input_scaled,\
+                         columns=['fixed acidity','volatile acidity','chlorides','free sulfur dioxide', \
+                                   'pH', 'sulphates', 'alcohol']) # str(num) for num in num_list?
+        # ['Fixed Acidity','Volatile Acidity','Citric Acid','Residual Sugar','Chlorides','Free Sulfur Dioxide', 'Total Sulfur Dioxide', 'Density', 'pH Level', 'Sulphates Content', 'Alcohol Content']
+    
+        quality = model.predict(input)
+        # quality = predict(user_input)
         if quality == 0:
             quality = 'Bad'
         if quality == 1:
@@ -107,8 +112,12 @@ with tab2:
         # Scale user input to pass to model, choosing appropriate model from wine colour
         user_input_scaled = scaler_red.transform([user_input])
         model = model_red
+
+        input = pd.DataFrame(user_input_scaled,\
+                         columns=['volatile acidity','citric acid', 'residual sugar','chlorides', \
+                                   'pH', 'sulphates', 'alcohol'])
         
-        quality = predict(user_input)
+        quality = model.predict(input)
         if quality == 0:
             quality = 'Bad'
         if quality == 1:
