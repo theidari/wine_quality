@@ -32,14 +32,13 @@ scaler_red.fit(X_red)
 # Function to predict from model 
 def predict(user_input):
 
-    # Scale user input to pass to model, choosing appropriate model from wine colour
-    # Testing to see if colour button is working 
-    if colour == 'White':
-        user_input_scaled = scaler_white.transform([user_input])
-        model = model_white
-    elif colour == 'Red': 
-        user_input_scaled = scaler_red.transform([user_input])
-        model = model_red 
+    
+    # if colour == 'White':
+        
+    #     model = model_white
+    # elif colour == 'Red': 
+        
+    #     model = model_red 
     
     # Convert input to a dataframe to pass to .predict method
     input = pd.DataFrame(user_input_scaled,\
@@ -74,6 +73,10 @@ with tab1:
 
         # Collect user input
         user_input = [feature1, feature2, feature5, feature6, feature9, feature10, feature11]
+        # Scale user input to pass to model, choosing appropriate model from wine colour
+        user_input_scaled = scaler_white.transform([user_input])
+        model = model_white 
+        st.write(user_input_scaled)
         
         quality = predict(user_input)
         if quality == 0:
@@ -97,10 +100,13 @@ with tab2:
     feature10 = st.number_input('Sulphates Content', min_value = 0.6, max_value = 1.07, value=0.8, key = 'red SC')
     feature11 = st.number_input('Alcohol Content', min_value = 8.0, max_value = 14.9, value=10.0, key = 'red AC')
 
-    if st.button('Predict Quality Red', key = 'red button'):
+    if st.button('Predict Quality', key = 'red button'):
 
         # Collect user input
         user_input = [feature2, feature3, feature4, feature5, feature9, feature10, feature11]
+        # Scale user input to pass to model, choosing appropriate model from wine colour
+        user_input_scaled = scaler_red.transform([user_input])
+        model = model_red
         
         quality = predict(user_input)
         if quality == 0:
