@@ -58,7 +58,6 @@ tab1, tab2 = st.tabs(['White Wine', 'Red Wine'])
 
 with tab1:
     # User feature input
-    # Add units to these, maybe description or like Citric Acid content?
     feature1 = st.number_input('Fixed Acidity', min_value = 1.5, max_value = 2.5, value=2.0)
     feature2 = st.number_input('Volatile Acidity', min_value = 0.35, max_value = 1.15, value=0.5)
     # feature3 = st.number_input('Citric Acid', min_value = 0.0, max_value = 0.95, value=0.0)
@@ -71,10 +70,47 @@ with tab1:
     feature10 = st.number_input('Sulphates Content', min_value = 0.6, max_value = 1.07, value=0.8)
     feature11 = st.number_input('Alcohol Content', min_value = 8.0, max_value = 14.9, value=10.0)
 
-with tab2: 
-    st.write('Red')
+    if st.button('Predict Quality'):
 
-colour = st.selectbox('Red or White:', ['Red','White'])
+    # Collect user input
+    user_input = [feature1, feature2, feature5, feature6, feature9, feature10, feature11]
+    
+    quality = predict(user_input)
+    if quality == 0:
+        quality = 'Bad'
+    if quality == 1:
+        quality = 'Delicious!'
+    # quality = predict(feature1, feature2, feature3) # this will just be good/bad/declious?
+    st.success(f'The predicted wine quality is {quality}') # or we predict your wine to be [...]?
+
+with tab2: 
+    # User feature input
+    # feature1 = st.number_input('Fixed Acidity', min_value = 1.5, max_value = 2.5, value=2.0)
+    feature2 = st.number_input('Volatile Acidity', min_value = 0.35, max_value = 1.15, value=0.5)
+    feature3 = st.number_input('Citric Acid', min_value = 0.0, max_value = 0.95, value=0.0)
+    feature4 = st.number_input('Residual Sugar', min_value = 0.8, max_value = 3.0, value=1.0)
+    feature5 = st.number_input('Chlorides', min_value = 0.2, max_value = 0.53, value=0.3)
+    # feature6 = st.number_input('Free Sulfur Dioxide', min_value = 1.44, max_value = 4.8, value=2.5)
+    # feature7 = st.number_input('Total Sulfur Dioxide', min_value = 1.8, max_value = 259.0, value=5.0) # This one huge different b/w white and red, trying min/max of each
+    # feature8 = st.number_input('Density', min_value = 0.996, max_value = 1.001, value=0.997)
+    feature9 = st.number_input('pH Level', min_value = 2.72, max_value = 3.9, value=3.2)
+    feature10 = st.number_input('Sulphates Content', min_value = 0.6, max_value = 1.07, value=0.8)
+    feature11 = st.number_input('Alcohol Content', min_value = 8.0, max_value = 14.9, value=10.0)
+
+    if st.button('Predict Quality'):
+
+    # Collect user input
+    user_input = [feature2, feature3, feature4, feature5, feature9, feature10, feature11]
+    
+    quality = predict(user_input)
+    if quality == 0:
+        quality = 'Bad'
+    if quality == 1:
+        quality = 'Delicious!'
+    # quality = predict(feature1, feature2, feature3) # this will just be good/bad/declious?
+    st.success(f'The predicted wine quality is {quality}') # or we predict your wine to be [...]?
+
+# colour = st.selectbox('Red or White:', ['Red','White'])
 
 # Calls the predict function from user input on button press
 if st.button('Predict Quality'):
