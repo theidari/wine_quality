@@ -1,3 +1,6 @@
+<p align="center">
+  <img src="https://github.com/theidari/wine_quality/blob/main/asset/header.png" width=500px>
+    </p>
 # Read Between the Wines
 
 # Introduction
