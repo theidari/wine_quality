@@ -18,8 +18,8 @@ df_red = pd.read_csv('Resources/red_train_norm.csv', sep = ',')
 
 X_white = df_white.drop(columns = ['quality', 'total sulfur dioxide',
                                      'density', 'citric acid', 'residual sugar'])
-X_red = df_red.drop(columns=['quality', 'total sulfur dioxide',
-                                     'density', 'citric acid', 'residual sugar'])
+X_red = df_red.drop(columns=['quality', 'fixed acidity', 'total sulfur dioxide', 'total sulfur dioxide',
+                                     'density'])
 
 scaler_white = StandardScaler()
 scaler_red = StandardScaler()
@@ -29,25 +29,7 @@ scaler_red = StandardScaler()
 scaler_white.fit(X_white)
 scaler_red.fit(X_red)
 
-# Function to predict from model 
-def predict(user_input):
-
-    
-    # if colour == 'White':
-        
-    #     model = model_white
-    # elif colour == 'Red': 
-        
-    #     model = model_red 
-    
-    # Convert input to a dataframe to pass to .predict method
-    input = pd.DataFrame(user_input_scaled,\
-                         columns=['fixed acidity','volatile acidity','chlorides','free sulfur dioxide', \
-                                   'pH', 'sulphates', 'alcohol']) # str(num) for num in num_list?
-    # ['Fixed Acidity','Volatile Acidity','Citric Acid','Residual Sugar','Chlorides','Free Sulfur Dioxide', 'Total Sulfur Dioxide', 'Density', 'pH Level', 'Sulphates Content', 'Alcohol Content']
-    prediction = model.predict(input)
-    return prediction
-
+# Streamlit elements 
 st.title('Wine Quality Prediction')
 # st.image('https://images.unsplash.com/photo-1585553616435-2dc0a54e271d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8d2luZXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=400&q=60')
 st.header('Trained with wine data from Vinho Verde - Portugal')
@@ -140,3 +122,23 @@ with tab2:
 #         quality = 'Delicious!'
 #     # quality = predict(feature1, feature2, feature3) # this will just be good/bad/declious?
 #     st.success(f'The predicted wine quality is {quality}') # or we predict your wine to be [...]?
+
+
+# # Function to predict from model 
+# def predict(user_input):
+
+    
+#     # if colour == 'White':
+        
+#     #     model = model_white
+#     # elif colour == 'Red': 
+        
+#     #     model = model_red 
+    
+#     # Convert input to a dataframe to pass to .predict method
+#     input = pd.DataFrame(user_input_scaled,\
+#                          columns=['fixed acidity','volatile acidity','chlorides','free sulfur dioxide', \
+#                                    'pH', 'sulphates', 'alcohol']) # str(num) for num in num_list?
+#     # ['Fixed Acidity','Volatile Acidity','Citric Acid','Residual Sugar','Chlorides','Free Sulfur Dioxide', 'Total Sulfur Dioxide', 'Density', 'pH Level', 'Sulphates Content', 'Alcohol Content']
+#     prediction = model.predict(input)
+#     return prediction
