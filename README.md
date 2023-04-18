@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://github.com/theidari/wine_quality/blob/main/asset/header.png" width=300px>
+  <img src="https://github.com/theidari/wine_quality/blob/main/asset/header.png" width=400px>
     </p>
 # Read Between the Wines
 
