@@ -72,16 +72,16 @@ with tab1:
 
     if st.button('Predict Quality'):
 
-    # Collect user input
-    user_input = [feature1, feature2, feature5, feature6, feature9, feature10, feature11]
-    
-    quality = predict(user_input)
-    if quality == 0:
-        quality = 'Bad'
-    if quality == 1:
-        quality = 'Delicious!'
-    # quality = predict(feature1, feature2, feature3) # this will just be good/bad/declious?
-    st.success(f'The predicted wine quality is {quality}') # or we predict your wine to be [...]?
+        # Collect user input
+        user_input = [feature1, feature2, feature5, feature6, feature9, feature10, feature11]
+        
+        quality = predict(user_input)
+        if quality == 0:
+            quality = 'Bad'
+        if quality == 1:
+            quality = 'Delicious!'
+        # quality = predict(feature1, feature2, feature3) # this will just be good/bad/declious?
+        st.success(f'The predicted wine quality is {quality}') # or we predict your wine to be [...]?
 
 with tab2: 
     # User feature input
@@ -99,29 +99,29 @@ with tab2:
 
     if st.button('Predict Quality'):
 
-    # Collect user input
-    user_input = [feature2, feature3, feature4, feature5, feature9, feature10, feature11]
-    
-    quality = predict(user_input)
-    if quality == 0:
-        quality = 'Bad'
-    if quality == 1:
-        quality = 'Delicious!'
-    # quality = predict(feature1, feature2, feature3) # this will just be good/bad/declious?
-    st.success(f'The predicted wine quality is {quality}') # or we predict your wine to be [...]?
+        # Collect user input
+        user_input = [feature2, feature3, feature4, feature5, feature9, feature10, feature11]
+        
+        quality = predict(user_input)
+        if quality == 0:
+            quality = 'Bad'
+        if quality == 1:
+            quality = 'Delicious!'
+        # quality = predict(feature1, feature2, feature3) # this will just be good/bad/declious?
+        st.success(f'The predicted wine quality is {quality}') # or we predict your wine to be [...]?
 
 # colour = st.selectbox('Red or White:', ['Red','White'])
 
 # Calls the predict function from user input on button press
-if st.button('Predict Quality'):
+# if st.button('Predict Quality'):
 
-    # Collect user input
-    user_input = [feature1, feature2, feature5, feature6, feature9, feature10, feature11]
+#     # Collect user input
+#     user_input = [feature1, feature2, feature5, feature6, feature9, feature10, feature11]
     
-    quality = predict(user_input)
-    if quality == 0:
-        quality = 'Bad'
-    if quality == 1:
-        quality = 'Delicious!'
-    # quality = predict(feature1, feature2, feature3) # this will just be good/bad/declious?
-    st.success(f'The predicted wine quality is {quality}') # or we predict your wine to be [...]?
+#     quality = predict(user_input)
+#     if quality == 0:
+#         quality = 'Bad'
+#     if quality == 1:
+#         quality = 'Delicious!'
+#     # quality = predict(feature1, feature2, feature3) # this will just be good/bad/declious?
+#     st.success(f'The predicted wine quality is {quality}') # or we predict your wine to be [...]?
