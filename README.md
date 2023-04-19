@@ -7,70 +7,37 @@
 &emsp;&emsp;Wine is an alcoholic beverage that is traditionally made by fermenting grapes, though it can also be made from other fruits like apples and berries. To make wine, grapes are harvested, crushed to extract the juice, and then fermented with yeast to convert the natural sugars into alcohol. The resulting wine can range from sweet to dry and is enjoyed in a variety of settings, from casual gatherings to formal events. Wine is culturally and historically significant and has been an integral part of human civilization for thousands of years. Today, wine is produced in various regions worldwide, each with its unique styles, flavors, and characteristics.<a href="https://github.com/theidari/wine_quality#references"><b>[1]</b></a><br>
 &emsp;&emsp;Portugal is among the top ten wine-exporting countries, with a $1.1 billion (2.7%) market share in 2022 <a href="https://github.com/theidari/wine_quality#references"><b>[2]</b></a>,
 and its vinho verde wine, primarily from the northwest region, has seen a 36% increase in exports from 1997 to 2007. To support the wine industry's growth, new technologies are being invested in for both wine making and selling processes. Certification and quality assessment are crucial to preventing illegal adulteration and ensuring the production of high-quality wine. Quality evaluation is typically conducted as part of the certification process, helping to identify critical factors involved in wine production and classify wines according to their quality levels, such as premium brands. This information is also used to determine pricing.<a href="https://github.com/theidari/wine_quality#references"><b>[4]</b></a><br>
-&emsp;&emsp;Wine quality evaluation involves both physicochemical and sensory tests. Physicochemical laboratory tests, such as density, alcohol content, and pH measurements, are commonly used to characterize wine. Meanwhile, sensory tests rely on trained individuals to assess the taste, aroma, and overall quality of the wine. In this machine learning project, the goal is to predict the quality of a wine based on features describing its physical chemistry. While wineries conduct chemical analyses and wine tastings to analyze their wine, the impact of the entire chemistry on taste is not commonly measured. Machine learning aims to bridge this gap and identify patterns and relationships that may not be immediately apparent. This approach can support wineries in their quality assurance or wine tasting, hopefully leading to better-tasting wine.
+&emsp;&emsp;Wine quality evaluation involves both physicochemical and sensory tests. Physicochemical laboratory tests, such as density, alcohol content, and pH measurements, are commonly used to characterize wine. Meanwhile, sensory tests rely on trained individuals to assess the taste, aroma, and overall quality of the wine. In this machine learning project, the <ins><b>goal</b></ins> is to predict the quality of a wine based on features describing its physical chemistry. While wineries conduct chemical analyses and wine tastings to analyze their wine, the impact of the entire chemistry on taste is not commonly measured. Machine learning aims (<ins><b>motivation</b></ins>) to bridge this gap and identify patterns and relationships that may not be immediately apparent. This approach (<ins><b>use cases</b></ins>) can support wineries in their quality assurance or wine tasting, hopefully leading to better-tasting wine.
 </p>
-<h3>Dataset</h3>
+
+<h3>Data</h3>
 <p align="justify">
-1. Title: Wine Quality 
+&emsp;&emsp;The datasets used in this research are available at <a href="http://www3.dsi.uminho.pt/pcortez/wine/">Wine Quality Datasets</a> and relate to the red and white variants of the Portuguese "Vinho Verde" wine <a href="https://www.vinhoverde.pt/en/homepage">ℹ</a>, with 1599 and 4898 instances, respectively. Due to privacy and logistic issues, the datasets only contain physicochemical (11 input attributes) and sensory (output) variables. The output attribute represents the median of at least three evaluations made by wine experts who rated the wine quality on a scale from 0 (very bad) to 10 (very excellent). The datasets do not include information about grape types, wine brands, or selling prices.<br>
+&emsp;&emsp;The datasets were created in 2009 by Paulo Cortez, Antonio Cerdeira, Fernando Almeida, Telmo Matos, and Jose Reis. They were used in a study titled "Modeling wine preferences by data mining from physicochemical properties" by the same authors, published in the Decision Support Systems journal.
+</p>
+<h4>Input attributes (based on physicochemical tests):</h4>
+<ol>
+<li><b>Fixed Acidity:</b> corresponds to the set of low volatility organic acids such as malic, lactic, tartaric or citric acids. <a href="https://sinatech.info/en/acetic-volatile-acidity-in-wine-cider-vinegars-and-juices/#:~:text=Fixed%20acidity%20corresponds%20to%20the,of%20a%20distillation%20process%3A%20formic">ℹ</a></li>
+<li><b>Volatile Acidity:</b> a measure of the wine's volatile (or gaseous) acids. <a href="https://extension.psu.edu/volatile-acidity-in-wine#:~:text=What%20Is%20Volatile%20Acidity%3F,smell%20and%20taste%20of%20vinegar.">ℹ</a></li>
+<li><b>Citric Acid:</b> to increase acidity, complement a specific flavor or prevent ferric hazes. <a href="https://wineserver.ucdavis.edu/industry-info/enology/methods-and-techniques/common-chemical-reagents/citric-acid#:~:text=Citric%20acid%20is%20often%20added,acid%20is%20its%20microbial%20instability.">ℹ</a></li>
+<li><b>Residual Sugar:</b> is from the natural grape sugars left in a wine after the alcoholic fermentation finishes. <a href="https://whicherridge.com.au/blog/what-is-residual-sugar-in-wine/#:~:text=Sweetness%20in%20wine%20is%20called,the%20sweeter%20the%20wine%20is.">ℹ</a></li>
+<li><b>Chlorides:</b> is the amount of salt in the wine. <a href="https://www.scielo.br/j/cta/a/HQsrPrPMNZYgRzSKtrjHyHh/?format=pdf&lang=en
+">ℹ</a></li>
+<li><b>Free Sulfur Dioxide:</b> it prevents microbial growth and the oxidation of wine. <a href="https://www.oiv.int/public/medias/7840/oiv-collective-expertise-document-so2-and-wine-a-review.pdf">ℹ</a></li>
+<li><b>Total Sulfur Dioxide:</b> is the amount of free + bound forms of SO2. <a href="https://www.oiv.int/public/medias/7840/oiv-collective-expertise-document-so2-and-wine-a-review.pdf">ℹ</a></li>
+<li><b>Density:</b> sweeter wines have a higher density. <a href="https://www.aqua-calc.com/page/density-table/substance/alcoholic-blank-beverage-coma-and-blank-wine-coma-and-blank-table-coma-and-blank-red-coma-and-blank-merlot">ℹ</a></li>
+<li><b>pH:</b> Typically, the pH level of a wine ranges from 3 to 4. <a href="https://www.winemag.com/2019/06/19/what-is-acidity-in-wine/">ℹ</a></li>
+<li><b>Sulphates:</b> are naturally occurring and an added preservative found in wine and many other foods and beverages. <a href="https://www.winedeals.com/blog/post/sulfites-in-wine-what-they-are-and-how-they-affect-you#:~:text=What%20Are%20Sulfites%20and%20Why,of%20yeast%20metabolism%20during%20fermentation.">ℹ</a></li>
+<li><b>Alcohol:</b> the amount of alcohol in wine. <a href="https://winefolly.com/tips/the-lightest-to-the-strongest-wine/">ℹ</a></li>
+</ol>
 
-2. Sources
-   Created by: Paulo Cortez (Univ. Minho), Antonio Cerdeira, Fernando Almeida, Telmo Matos and Jose Reis (CVRVV) @ 2009
-   
-3. Past Usage:
 
-  P. Cortez, A. Cerdeira, F. Almeida, T. Matos and J. Reis. 
-  Modeling wine preferences by data mining from physicochemical properties.
-  In Decision Support Systems, Elsevier, 47(4):547-553. ISSN: 0167-9236.
 
-  In the above reference, two datasets were created, using red and white wine samples.
-  The inputs include objective tests (e.g. PH values) and the output is based on sensory data
-  (median of at least 3 evaluations made by wine experts). Each expert graded the wine quality 
-  between 0 (very bad) and 10 (very excellent). Several data mining methods were applied to model
-  these datasets under a regression approach. The support vector machine model achieved the
-  best results. Several metrics were computed: MAD, confusion matrix for a fixed error tolerance (T),
-  etc. Also, we plot the relative importances of the input variables (as measured by a sensitivity
-  analysis procedure).
- 
-4. Relevant Information:
 
-   The two datasets are related to red and white variants of the Portuguese "Vinho Verde" wine.
-   For more details, consult: http://www.vinhoverde.pt/en/ or the reference [Cortez et al., 2009].
-   Due to privacy and logistic issues, only physicochemical (inputs) and sensory (the output) variables 
-   are available (e.g. there is no data about grape types, wine brand, wine selling price, etc.).
 
-   These datasets can be viewed as classification or regression tasks.
-   The classes are ordered and not balanced (e.g. there are munch more normal wines than
-   excellent or poor ones). Outlier detection algorithms could be used to detect the few excellent
-   or poor wines. Also, we are not sure if all input variables are relevant. So
-   it could be interesting to test feature selection methods. 
 
-5. Number of Instances: red wine - 1599; white wine - 4898. 
 
-6. Number of Attributes: 11 + output attribute
-  
-   Note: several of the attributes may be correlated, thus it makes sense to apply some sort of
-   feature selection.
 
-7. Attribute information:
-
-   For more information, read [Cortez et al., 2009].
-
-   Input variables (based on physicochemical tests):
-   1 - fixed acidity
-   2 - volatile acidity
-   3 - citric acid
-   4 - residual sugar
-   5 - chlorides
-   6 - free sulfur dioxide
-   7 - total sulfur dioxide
-   8 - density
-   9 - pH
-   10 - sulphates
-   11 - alcohol
-   Output variable (based on sensory data): 
-   12 - quality (score between 0 and 10)
-
-8. Missing Attribute Values: None</P>
 <h4>Methods, Software and Attribution</h4>
 The analyses were performed using 
 
