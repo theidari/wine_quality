@@ -16,7 +16,7 @@ and its vinho verde wine, primarily from the northwest region, has seen a 36% in
 &emsp;&emsp;The datasets were created in 2009 by Paulo Cortez, Antonio Cerdeira, Fernando Almeida, Telmo Matos, and Jose Reis. They were used in a study titled "Modeling wine preferences by data mining from physicochemical properties" by the same authors, published in the Decision Support Systems journal.
 </p>
 <h4>Input attributes (based on physicochemical tests):</h4>
-<ol>
+<ol align="justify">
 <li><b>Fixed Acidity:</b> corresponds to the set of low volatility organic acids such as malic, lactic, tartaric or citric acids. <a href="https://sinatech.info/en/acetic-volatile-acidity-in-wine-cider-vinegars-and-juices/#:~:text=Fixed%20acidity%20corresponds%20to%20the,of%20a%20distillation%20process%3A%20formic">ℹ</a></li>
 <li><b>Volatile Acidity:</b> a measure of the wine's volatile (or gaseous) acids. <a href="https://extension.psu.edu/volatile-acidity-in-wine#:~:text=What%20Is%20Volatile%20Acidity%3F,smell%20and%20taste%20of%20vinegar.">ℹ</a></li>
 <li><b>Citric Acid:</b> to increase acidity, complement a specific flavor or prevent ferric hazes. <a href="https://wineserver.ucdavis.edu/industry-info/enology/methods-and-techniques/common-chemical-reagents/citric-acid#:~:text=Citric%20acid%20is%20often%20added,acid%20is%20its%20microbial%20instability.">ℹ</a></li>
