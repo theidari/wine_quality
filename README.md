@@ -2,7 +2,73 @@
   <img src="https://github.com/theidari/wine_quality/blob/main/asset/header.png" width=400px>
     </p>
 <h3>Introduction</h3>
-<p align="justify">The goal of this machine learning project is to predict the quality of a wine from features describing its physical chemistry. While wineries conduct both chemical analysis and wine tastings to analyze their wine, the impact of the entire chemistry on taste is not commonly measured. With machine learning the goal is to bridge this gap, and highlight patterns and relationships that may not be apparent. This could be use or support wineries in their quality assurance or wine tasting, hopefully bringing some helpful new insight to lead to better tasting wine.</p>
+<p align="justify">
+Portugal is a top ten wine exporting country, with $1.1 billion (2.7%) of the market share in 2022.<a href="https://github.com/theidari/wine_quality/edit/main/README.md#references"><b>[1]</b></a>
+The goal of this machine learning project is to predict the quality of a wine from features describing its physical chemistry. While wineries conduct both chemical analysis and wine tastings to analyze their wine, the impact of the entire chemistry on taste is not commonly measured. With machine learning the goal is to bridge this gap, and highlight patterns and relationships that may not be apparent. This could be use or support wineries in their quality assurance or wine tasting, hopefully bringing some helpful new insight to lead to better tasting wine.
+Certification and quality assessment of wine are crucial aspects that can aid in preventing illegal adulteration and ensuring the production of high-quality wine. As part of the certification process, quality evaluation is typically conducted, which can help to identify the most significant factors involved in wine production and classify wines according to their quality levels, such as premium brands. This information can also be used to determine pricing.
+Both physicochemical and sensory tests are essential in wine quality evaluation. Physicochemical laboratory tests, such as measuring density, alcohol content, and pH values, are commonly used to characterize wine. Meanwhile, sensory tests rely on the expertise of trained individuals to assess the taste, aroma, and overall quality of the wine.</p>
+<h3>Dataset</h3>
+<p align="justify">
+1. Title: Wine Quality 
+
+2. Sources
+   Created by: Paulo Cortez (Univ. Minho), Antonio Cerdeira, Fernando Almeida, Telmo Matos and Jose Reis (CVRVV) @ 2009
+   
+3. Past Usage:
+
+  P. Cortez, A. Cerdeira, F. Almeida, T. Matos and J. Reis. 
+  Modeling wine preferences by data mining from physicochemical properties.
+  In Decision Support Systems, Elsevier, 47(4):547-553. ISSN: 0167-9236.
+
+  In the above reference, two datasets were created, using red and white wine samples.
+  The inputs include objective tests (e.g. PH values) and the output is based on sensory data
+  (median of at least 3 evaluations made by wine experts). Each expert graded the wine quality 
+  between 0 (very bad) and 10 (very excellent). Several data mining methods were applied to model
+  these datasets under a regression approach. The support vector machine model achieved the
+  best results. Several metrics were computed: MAD, confusion matrix for a fixed error tolerance (T),
+  etc. Also, we plot the relative importances of the input variables (as measured by a sensitivity
+  analysis procedure).
+ 
+4. Relevant Information:
+
+   The two datasets are related to red and white variants of the Portuguese "Vinho Verde" wine.
+   For more details, consult: http://www.vinhoverde.pt/en/ or the reference [Cortez et al., 2009].
+   Due to privacy and logistic issues, only physicochemical (inputs) and sensory (the output) variables 
+   are available (e.g. there is no data about grape types, wine brand, wine selling price, etc.).
+
+   These datasets can be viewed as classification or regression tasks.
+   The classes are ordered and not balanced (e.g. there are munch more normal wines than
+   excellent or poor ones). Outlier detection algorithms could be used to detect the few excellent
+   or poor wines. Also, we are not sure if all input variables are relevant. So
+   it could be interesting to test feature selection methods. 
+
+5. Number of Instances: red wine - 1599; white wine - 4898. 
+
+6. Number of Attributes: 11 + output attribute
+  
+   Note: several of the attributes may be correlated, thus it makes sense to apply some sort of
+   feature selection.
+
+7. Attribute information:
+
+   For more information, read [Cortez et al., 2009].
+
+   Input variables (based on physicochemical tests):
+   1 - fixed acidity
+   2 - volatile acidity
+   3 - citric acid
+   4 - residual sugar
+   5 - chlorides
+   6 - free sulfur dioxide
+   7 - total sulfur dioxide
+   8 - density
+   9 - pH
+   10 - sulphates
+   11 - alcohol
+   Output variable (based on sensory data): 
+   12 - quality (score between 0 and 10)
+
+8. Missing Attribute Values: None</P>
 <h4>Methods, Software and Attribution</h4>
 The analyses were performed using 
 
@@ -39,6 +105,7 @@ Following programming languages, software, and libraries were used in this proje
 <h3>Conclusion</h3>
 <h3>references</h3>
 <ol>
+<li>Workman, D. (n.d.). Wine Exports by Country. worlds top exports. Retrieved April 18, 2023. <a href="https://www.worldstopexports.com/wine-exports-country/"><b>➲</b></a></li>
 <li>Collection of wines from Vinho Verde region <a href="https://archive.ics.uci.edu/ml/datasets/wine+quality"><b>➲</b></a></li>
 <li>P. Cortez, A. Cerdeira, F. Almeida, T. Matos and J. Reis. mModeling wine preferences by data mining from physicochemical properties.
 In Decision Support Systems, Elsevier, 47(4):547-553. ISSN: 0167-9236. <a href="https://www.sciencedirect.com/science/article/pii/S0167923609001377?via%3Dihub"><b>➲</b></a></li>
