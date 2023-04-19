@@ -17,7 +17,7 @@ and its vinho verde wine, primarily from the northwest region, has seen a 36% in
 </p>
 <h4>Input attributes (based on physicochemical tests):</h4>
 <ol align="justify">
-<li><b>Fixed Acidity:</b> corresponds to the set of low volatility organic acids such as malic, lactic, tartaric or citric acids. <a href="https://sinatech.info/en/acetic-volatile-acidity-in-wine-cider-vinegars-and-juices/#:~:text=Fixed%20acidity%20corresponds%20to%20the,of%20a%20distillation%20process%3A%20formic">ℹ</a></li>
+<li><b>Fixed Acidity:</b> set of low volatility organic acids such as malic, lactic, tartaric or citric acids. <a href="https://sinatech.info/en/acetic-volatile-acidity-in-wine-cider-vinegars-and-juices/#:~:text=Fixed%20acidity%20corresponds%20to%20the,of%20a%20distillation%20process%3A%20formic">ℹ</a></li>
 <li><b>Volatile Acidity:</b> a measure of the wine's volatile (or gaseous) acids. <a href="https://extension.psu.edu/volatile-acidity-in-wine#:~:text=What%20Is%20Volatile%20Acidity%3F,smell%20and%20taste%20of%20vinegar.">ℹ</a></li>
 <li><b>Citric Acid:</b> to increase acidity, complement a specific flavor or prevent ferric hazes. <a href="https://wineserver.ucdavis.edu/industry-info/enology/methods-and-techniques/common-chemical-reagents/citric-acid#:~:text=Citric%20acid%20is%20often%20added,acid%20is%20its%20microbial%20instability.">ℹ</a></li>
 <li><b>Residual Sugar:</b> is from the natural grape sugars left in a wine after the alcoholic fermentation finishes. <a href="https://whicherridge.com.au/blog/what-is-residual-sugar-in-wine/#:~:text=Sweetness%20in%20wine%20is%20called,the%20sweeter%20the%20wine%20is.">ℹ</a></li>
