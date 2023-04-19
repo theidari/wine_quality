@@ -1,6 +1,7 @@
 <p align="center">
   <img src="https://github.com/theidari/wine_quality/blob/main/asset/header.png" width=400px>
-    </p>
+</p>
+<p align="center"><a href="https://theidari-wine-quality-appstreamlit-benjamin-1l3eqb.streamlit.app/#wine-quality-prediction"><img src="https://shields.io/badge/streamlit-Wine%20Quality%20Predictor-red?logo=streamlit&style=flat-square"></a></p>
 <h3>Introduction</h3>
 <p align="justify">
 Portugal is a top ten wine exporting country, with $1.1 billion (2.7%) of the market share in 2022.<a href="https://github.com/theidari/wine_quality/edit/main/README.md#references"><b>[1]</b></a>
